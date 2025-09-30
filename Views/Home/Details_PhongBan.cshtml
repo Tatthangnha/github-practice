@@ -1,0 +1,53 @@
+﻿@model LTW05_bai1.ViewModels.DepartmentViewModels
+
+@{
+    ViewBag.Title = "Details_PhongBan";
+}
+
+<h2>Chi tiet phong ban</h2>
+
+<p>
+    <b> Ma PB: </b>
+    @Model.Department.MaPhong
+</p>
+<p>
+    <b> Ten PB: </b>
+    @Model.Department.TenPhong
+</p>
+<table class="table table-striped border">
+    <tr class="thead-dark">
+        <th>
+            MA nhan vien
+        </th>
+        <th>
+            Ten nhan vien
+        </th>
+        <th>
+            Gioi tinh
+        </th>
+        <th>
+            Tinh/Thanh pho
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Employeee)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GioiTinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QueQuan)
+            </td>
+        </tr>
+    }
+
+</table>
+

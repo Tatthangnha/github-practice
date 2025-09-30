@@ -1,0 +1,59 @@
+﻿@model IEnumerable<LTW05_bai1.Models.Employee>
+
+@{
+    ViewBag.Title = "HienThiNhanVien";
+}
+
+<h2>HienThiNhanVien</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped border">
+    <tr class="thead-dark">
+        <th>
+            MA nhan vien
+        </th>
+        <th>
+            Ten nhan vien
+        </th>
+        <th>
+            Gioi tinh
+        </th>
+        <th>
+            Tinh/Thanh pho
+        </th>
+        <th>
+            Ma phong
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manv)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GioiTinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.QueQuan)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaPhong)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaPhong }) |
+                @Html.ActionLink("Details", "Details_PhongBan", new { id = item.MaPhong }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaPhong })
+            </td>
+        </tr>
+    }
+
+</table>
+
